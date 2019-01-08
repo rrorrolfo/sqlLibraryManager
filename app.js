@@ -5,6 +5,19 @@ const sequelize = require("./models").sequelize;
 // Create the App
 const app = express();
 
+// view engine setup
+app.set("view engine", "pug");
+
+////////// Routes /////////
+
+// Static route with virtual path prefix
+app.use("/static", express.static("public"));
+
+// Root route
+app.get("/", (req, res) => {
+    res.render("index");
+});
+
 // Server
     // Create or update table when server starts
 sequelize.sync().then(
