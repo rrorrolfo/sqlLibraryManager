@@ -23,6 +23,11 @@ app.get("/books", (req, res) => {
     res.render("index");
 });
 
+// Create Book route
+app.get("/books/new", (req, res) => {
+    res.render("create_book");
+});
+
 // Server
     // Create or update table when server starts
 sequelize.sync().then(
