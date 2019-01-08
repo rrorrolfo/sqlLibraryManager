@@ -28,7 +28,26 @@ app.get("/books/new", (req, res) => {
     res.render("create_book");
 });
 
-// Server
+// Update Book route
+app.get("/books/:id", (req, res) => {
+    res.render("update_book")
+});
+
+// 404 handler
+app.use((req, res, next) => {
+    const err = new Error("Page Not Found");
+    err.status = 404;
+    next(err);
+});
+
+// Error Handler
+app.use((err, req, res, next) => {
+    res.locals.error = err;
+    res.status(err.status);
+    res.render("notfound");
+});
+
+////////// Server /////////
     // Create or update table when server starts
 sequelize.sync().then(
     app.listen(3000, () => {

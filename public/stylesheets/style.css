@@ -112,8 +112,13 @@ a {
 
   a:hover,
   input[type=submit]:hover,
-  .button:hover {
+  .button:hover,
+  .add_book_cta:hover {
     color: #07889b;
+  }
+
+  a:visited {
+    color: inherit;
   }
 
 a.button, 
@@ -178,6 +183,27 @@ input[type=text] {
   align-items: center;
 }
 
+/********* Update/Delete Book view ********/
+
+#delete_form,
+.back_cta {
+  width: 90%;
+  margin: 0 auto 50px;
+}
+
+#delete_form input{
+  margin-top: 0;
+}
+
+/********* Not Found view ********/
+
+.error_text {
+  text-align: center;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: #66b9bf;
+}
+
 .error {
   color: rgb(236, 15, 15);
 }
@@ -190,17 +216,14 @@ input[type=text] {
     width: 100%;
   }
 
-  ul {
+  ul,
+  .container,
+  .back_cta {
     width: 80%;
     margin: 0 auto;
   }
 
   /********** index view ********/
-
-  .container {
-    width: 80%;
-    margin: 0 auto;
-  }
 
   .cat_title {
     font-size: 2rem;
@@ -250,6 +273,13 @@ input[type=text] {
     flex-basis: 40%;
     margin-left: auto;
   }
+
+  /********* Update/Delete Book view ********/
+
+  #delete_form {
+    width: 63%;
+    padding-left: 7.5%;
+  }
 }
 
 @media(min-width: 1020px) {
@@ -262,4 +292,12 @@ input[type=text] {
     width: 55%;
   }
 
+  #delete_form {
+    width: 50%;
+    padding-left: 5.75%
+  }
+
+  .back_cta {
+    width: 25%;
+  }
 }
