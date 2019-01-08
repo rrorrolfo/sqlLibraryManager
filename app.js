@@ -15,6 +15,11 @@ app.use("/static", express.static("public"));
 
 // Root route
 app.get("/", (req, res) => {
+    res.redirect("/books");
+});
+
+// Total books route
+app.get("/books", (req, res) => {
     res.render("index");
 });
 

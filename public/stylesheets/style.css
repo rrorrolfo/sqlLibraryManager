@@ -37,12 +37,21 @@ ul li {
   text-align: center;
   font-size: 1.5rem;
   flex-basis: 25%;
-  padding: 10px 0;
+  margin: 10px 0;
+  border-right: 1px solid #fff;
+}
+
+ul li:last-child{
+  border: none;
 }
 
 ul li:hover {
-  cursor: pointer;
   color: #07889b;
+}
+
+.add_book_cta:hover ,
+ul li:hover {
+  cursor: pointer;
 }
 
 a {
@@ -83,11 +92,25 @@ p {
   margin: 20px auto;
 }
 
-
-
 h2 {
-  border-top: 2px solid #e7e7e7;
-  padding-top: 20px;
+  color: #07889b;
+  text-align: center; 
+  font-size: 1.7rem;
+}
+
+/********* index **********/
+
+.add_book_cta {
+  width: 95%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px 10px;
+  background-color: #eeaa7b;
+  color: #fff;
+  letter-spacing: 2px;
+  padding: 5px 0;
+  font-size: 1.5rem;
+  border: 0;
 }
 
 th {
@@ -144,6 +167,27 @@ input[type=text] {
   ul {
     width: 80%;
     margin: 0 auto;
+  }
+
+  /********** index view ********/
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .cat_title {
+    font-size: 2rem;
+    margin: 35px 25px 0;
+    text-align: left;
+  }
+
+  .add_book_cta {
+    display: inline-block;
+    width: 180px;
+    font-size: 1.25rem;
+    margin: 25px;
+    border-radius: 5px 5px;
   }
 
 }
