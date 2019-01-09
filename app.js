@@ -13,25 +13,12 @@ app.set("view engine", "pug");
 // Static route with virtual path prefix
 app.use("/static", express.static("public"));
 
-// Root route
-app.get("/", (req, res) => {
-    res.redirect("/books");
-});
+// Requiring route modules
+const routes = require("./routes");
+const books = require("./routes/books");
 
-// Total books route
-app.get("/books", (req, res) => {
-    res.render("index");
-});
-
-// Create Book route
-app.get("/books/new", (req, res) => {
-    res.render("create_book");
-});
-
-// Update Book route
-app.get("/books/:id", (req, res) => {
-    res.render("update_book")
-});
+app.use(routes);
+app.use(books);
 
 // 404 handler
 app.use((req, res, next) => {
