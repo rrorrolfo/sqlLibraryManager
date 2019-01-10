@@ -16,15 +16,15 @@ router.get("/books/new", (req, res) => {
 
 router.post("/books/new", (req, res) => {
     Book.create(req.body)
-    .then((book) => {
-        console.log(book);
-        res.redirect("/books");
+    .then( book => {
+        res.redirect(`/books`);
     });
 });
 
 // Update Book route
 router.get("/books/:id", (req, res) => {
-    res.render("update_book")
+    Book.findByPk(req.params.id)
+    .then(book => res.render("update_book", { book: book }));
 });
 
 module.exports = router;

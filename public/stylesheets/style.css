@@ -65,7 +65,7 @@ h2 {
   font-size: 1.7rem;
 }
 
-/********* index **********/
+/********* index view**********/
 
 .add_book_cta {
   width: 95%;
@@ -80,18 +80,34 @@ h2 {
   border: 0;
 }
 
+/********* table for all rows in DB **********/
+
+table {
+  margin: 25px auto 50px;
+}
+
 th {
   border-bottom: 2px solid #D8B493;
   text-align: left;
   padding: 5px 20px 5px 10px;
+  color: #07889b;
+  font-size: 1.2rem;
 }
 
 tr {
   min-height: 50px;
+  font-size: 1.1rem;
 }
 
-tr:nth-child(2n) {
-  background: #E7E7E7;
+tr,
+tr a {
+  color: #66b9bf;
+}
+
+tr:nth-child(2n),
+tr:nth-child(2n) a {
+  background-color: #eeaa7b;
+  color: #fff;
 }
 
 td {
@@ -239,6 +255,14 @@ input[type=text] {
     border-radius: 5px 5px;
   }
 
+  table {
+    width: 85%;
+  }
+
+  tr {
+    font-size: 1.3rem;
+  }
+
   /********* Create Book view ********/
 
   form {
@@ -286,6 +310,10 @@ input[type=text] {
 
   ul li {
     font-size: 1.5rem;
+  }
+
+  table {
+    width: 80%;
   }
 
   form {

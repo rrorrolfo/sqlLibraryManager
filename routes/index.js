@@ -12,7 +12,10 @@ router.get("/", (req, res) => {
 
 // Total books route
 router.get("/books", (req, res) => {
-        res.render("index");
+    Book.findAll()
+    .then( books => {
+        res.render("index", { books: books})
+    });
 });
 
 module.exports = router;
