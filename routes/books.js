@@ -21,10 +21,16 @@ router.post("/books/new", (req, res) => {
     });
 });
 
-// Update Book route
+// Update Book routes
 router.get("/books/:id", (req, res) => {
     Book.findByPk(req.params.id)
     .then(book => res.render("update_book", { book: book }));
+});
+
+router.post("/books/:id", (req, res) => {
+    Book.findByPk(req.params.id)
+    .then( book =>  book.update(req.body))
+    .then( data =>  res.redirect(`/books/${data.id}`));
 });
 
 module.exports = router;
