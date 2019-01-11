@@ -30,7 +30,14 @@ router.get("/books/:id", (req, res) => {
 router.post("/books/:id", (req, res) => {
     Book.findByPk(req.params.id)
     .then( book =>  book.update(req.body))
-    .then( data =>  res.redirect(`/books/${data.id}`));
+    .then( book =>  res.redirect(`/books/${book.id}`));
+});
+
+// Delete book route
+router.post("/books/:id/delete", (req, res) => {
+    Book.findByPk(req.params.id)
+    .then( book => book.destroy())
+    .then(() => res.redirect("/books"));
 });
 
 module.exports = router;
