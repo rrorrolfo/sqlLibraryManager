@@ -16,28 +16,30 @@ router.get("/books/new", (req, res) => {
 
 router.post("/books/new", (req, res) => {
     Book.create(req.body)
-    .then( book => {
-        res.redirect(`/books`);
-    });
+    .then( book => res.redirect(`/books`))
+    .catch( err => res.render("error"));
 });
 
 // Update Book routes
 router.get("/books/:id", (req, res) => {
     Book.findByPk(req.params.id)
-    .then(book => res.render("update_book", { book: book }));
+    .then(book => res.render("update_book", { book: book }))
+    .catch( err => res.render("error"));
 });
 
 router.post("/books/:id", (req, res) => {
     Book.findByPk(req.params.id)
     .then( book =>  book.update(req.body))
-    .then( book =>  res.redirect(`/books/${book.id}`));
+    .then( book =>  res.redirect(`/books/${book.id}`))
+    .catch( err => res.render("error"));
 });
 
 // Delete book route
 router.post("/books/:id/delete", (req, res) => {
     Book.findByPk(req.params.id)
     .then( book => book.destroy())
-    .then(() => res.redirect("/books"));
+    .then(() => res.redirect("/books"))
+    .catch( err => res.render("error"));
 });
 
 module.exports = router;

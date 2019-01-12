@@ -13,9 +13,8 @@ router.get("/", (req, res) => {
 // Total books route
 router.get("/books", (req, res) => {
     Book.findAll()
-    .then( books => {
-        res.render("index", { books: books})
-    });
+    .then( books => res.render("index", { books: books}))
+    .catch( err => res.render("error"));
 });
 
 module.exports = router;

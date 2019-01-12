@@ -20,7 +20,7 @@ const books = require("./routes/books");
 app.use(routes);
 app.use(books);
 
-// 404 handler
+// 404 error handler
 app.use((req, res, next) => {
     const err = new Error("Page Not Found");
     err.status = 404;
@@ -30,8 +30,16 @@ app.use((req, res, next) => {
 // Error Handler
 app.use((err, req, res, next) => {
     res.locals.error = err;
-    res.status(err.status);
-    res.render("notfound");
+    res.status(err.status || 500);
+
+    if (err.status === 404) {
+        res.render("notfound");
+    } else {
+        err.status = 500
+        console.log(err.status);
+        res.render("error");
+    }
+    
 });
 
 ////////// Server /////////
@@ -42,3 +50,4 @@ sequelize.sync().then(
     })
 );
 
+module.exports = app;
