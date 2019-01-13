@@ -4,6 +4,8 @@ block content
 
     h2 Add a new book
 
+    include errors
+
     form(action="/books/new", method="post")
         .input_container.field
             label(for="title") Title

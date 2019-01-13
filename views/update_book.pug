@@ -4,6 +4,8 @@ block content
   
   h2 Update Book
 
+  include errors
+
   form( action=`/books/${book.id}`, method="post")
     .input_container.field
         label(for="title") Title
