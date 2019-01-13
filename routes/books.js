@@ -19,6 +19,7 @@ router.post("/books/new", (req, res) => {
     .then( book => res.redirect(`/books`))
     .catch( err => {
 
+        // Sequelize validation block
         if(err.name === "SequelizeValidationError") {
             res.render("create_book", { book: Book.build(req.body), errors: err.errors});
         } else {
@@ -38,8 +39,10 @@ router.get("/books/:id", (req, res) => {
 router.post("/books/:id", (req, res) => {
     Book.findByPk(req.params.id)
     .then( book =>  book.update(req.body))
-    .then( book =>  res.redirect(`/books/${book.id}`))
+    .then( book =>  res.redirect(`/books`))
     .catch( err => {
+
+        // Sequelize validation block
         if(err.name === "SequelizeValidationError") {
             let book = Book.build(req.body);
             book.id = req.params.id;
@@ -47,6 +50,7 @@ router.post("/books/:id", (req, res) => {
         } else {
             throw err;
         }
+
     })
     .catch( err => res.sendStatus(500));
 });

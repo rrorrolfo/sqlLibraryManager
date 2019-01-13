@@ -69,9 +69,7 @@ h2 {
 /********* index view**********/
 
 .add_book_cta {
-  width: 95%;
   display: block;
-  margin: 0 auto;
   border-radius: 10px 10px;
   background-color: #eeaa7b;
   color: #fff;
@@ -79,6 +77,33 @@ h2 {
   padding: 5px 0;
   font-size: 1.5rem;
   border: 0;
+}
+
+.add_book_cta,
+.search_area {
+  width: 95%;
+  margin: 0 auto;
+}
+
+/********* Search bar **********/
+
+.search_area {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.search_area label {
+  flex-basis: 15%;
+  text-align: left;
+}
+
+.search_area input {
+  flex-basis: 85%;
+}
+
+.hidden {
+  display: none;
 }
 
 /********* table for all rows in DB **********/
@@ -261,9 +286,32 @@ input[type=text] {
     text-align: left;
   }
 
+    /*** Search area alignment ***/
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 91%;
+    }
+
+    .container h2:first-child {
+      flex-basis: 100%;
+    }
+
+    .container a,
+    .container div {
+      flex-basis: 25%;
+    }
+
+    .container div {
+      margin-top: 25px;
+    }
+
   .add_book_cta {
     display: inline-block;
     width: 180px;
+    height: 28px;
     font-size: 1.25rem;
     margin: 25px;
     border-radius: 5px 5px;
@@ -324,6 +372,19 @@ input[type=text] {
 
   ul li {
     font-size: 1.5rem;
+  }
+
+  .container {
+    width: 80%;
+  }
+
+  .container div {
+    flex-basis: 65%;
+  }
+
+  .container a {
+    flex-basis: 30%;
+    margin: 0;
   }
 
   table {
