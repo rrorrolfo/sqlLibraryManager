@@ -102,14 +102,11 @@ h2 {
   flex-basis: 85%;
 }
 
-.hidden {
-  display: none;
-}
-
 /********* table for all rows in DB **********/
 
 table {
-  margin: 25px auto 50px;
+  margin: 25px auto;
+  width: 100%;
 }
 
 th {
@@ -138,6 +135,35 @@ tr:nth-child(2n) a {
 
 td {
   padding: 5px 20px 5px 10px;
+}
+
+/********* Pagination links**********/
+
+.pagination_container {
+  width: 90%;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.pagination_container ul{
+  display: inline-block;
+  list-style: none;
+}
+
+.pagination_container li {
+  float: left;
+  color: #fff;
+  margin: 0 5px;
+  background-color: #66b9bf;
+}
+
+.pagination_container a {
+  display: block;
+  padding: 5px 10px;
+}
+
+.pagination_container a:hover {
+  cursor: pointer;
 }
 
 /********* Create Book view ********/
@@ -323,6 +349,12 @@ input[type=text] {
 
   tr {
     font-size: 1.3rem;
+  }
+
+  /********* Pagination alignment ********/
+
+  .pagination_container ul {
+    width: initial;
   }
 
   /********* Create Book view ********/
