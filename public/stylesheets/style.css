@@ -17,11 +17,7 @@ header h1 {
   letter-spacing: 2px;
 }
 
-/******** Navigator *********/
-
-nav {
-  background-color: #66b9bf;
-}
+/******** Lists *********/
 
 ul {
   margin: 0;
@@ -42,10 +38,6 @@ ul li,
   border-right: 1px solid #fff;
 }
 
-ul li:last-child{
-  border: none;
-}
-
 ul li:hover {
   color: #07889b;
 }
@@ -64,6 +56,16 @@ h2 {
   color: #07889b;
   text-align: center; 
   font-size: 1.7rem;
+}
+
+#instructions {
+  background-color: #66b9bf;
+  padding: 10px;
+  text-align: center;
+}
+
+#instructions p {
+  font-size: 1.25rem;
 }
 
 /********* index view**********/
