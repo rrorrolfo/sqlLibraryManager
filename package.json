@@ -7,6 +7,9 @@
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "11.2.0"
+  },
   "author": "Rodolfo Perez",
   "license": "MIT",
   "dependencies": {
