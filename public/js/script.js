@@ -172,7 +172,7 @@ book_to_search.addEventListener("keyup", () => {
 
 const links_container = document.querySelector(".pagination_container");
 
-links_container.addEventListener("click", () => {
+links_container.addEventListener("click", (event) => {
 
     const results_table = document.querySelector(".results_table");
 
