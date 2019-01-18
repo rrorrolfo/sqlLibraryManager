@@ -5,6 +5,9 @@ const sequelize = require("./models").sequelize;
 // Create the App
 const app = express();
 
+// Port for deployment
+const port = process.env.PORT || 3000;
+
 // view engine setup
 app.set("view engine", "pug");
 
@@ -45,7 +48,7 @@ app.use((err, req, res, next) => {
 ////////// Server /////////
     // Create or update table when server starts
 sequelize.sync().then(
-    app.listen(3000, () => {
+    app.listen(port, () => {
         console.log("Listening in port 3000");
     })
 );
